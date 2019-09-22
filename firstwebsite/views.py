@@ -5,7 +5,7 @@ def convert(s):
         return
     s1 = '' 
     s1 += s[0].upper() 
-    for i in range(1, len(s) - 1): 
+    for i in range(1, len(s)): 
         if (s[i] == ' '): 
             s1 += s[i + 1].upper() 
             i += 1
@@ -17,11 +17,11 @@ def index(request):
     return render(request,'index.html')
 
 def form(request):
-    inputText=request.GET.get('text','default')
-    upper=request.GET.get('uppercase','off')
-    lower=request.GET.get('lowercase','off')
-    capital=request.GET.get('capitalize','off')
-    camel=request.GET.get('camelcase','off')
+    inputText=request.POST.get('text','default')
+    upper=request.POST.get('uppercase','off')
+    lower=request.POST.get('lowercase','off')
+    capital=request.POST.get('capitalize','off')
+    camel=request.POST.get('camelcase','off')
     analyzed=""
     if upper!='off':
         purpose="Upper Case"
